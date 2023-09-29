@@ -32,7 +32,7 @@ const Login = () => {
                                 <img src={google} alt="google" className="w-auto h-[45px]" />
                                 Google
                             </div>
-                            <div className="border border-solid border-black w-[210px] p-3 rounded-lg flex flex-row items-center justify-evenly gap-2 text-2xl font-bold text-primary3">
+                            <div className="border border-solid border-black w-[2wwe10px] p-3 rounded-lg flex flex-row items-center justify-evenly gap-2 text-2xl font-bold text-primary3">
                                 <img src={facebook} alt="google" className="w-auto h-[45px]" />
                                 Facebook
                             </div>

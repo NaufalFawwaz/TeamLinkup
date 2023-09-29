@@ -16,6 +16,7 @@ module.exports = {
         'primary1': '#F7FBFC',
         'primary2': '#C9D8DA',
         'primary3': '#0E4751',
+        'success' : '#07982F',
         'gray-text': '#949494',
       },
     },

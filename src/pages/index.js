@@ -1,7 +1,7 @@
-import LandingPage from "./LandingPage";
 import Login from "./Login";
+import Home from "./Home";
 
 export {
     Login,
-    LandingPage,
+    Home,
 }
