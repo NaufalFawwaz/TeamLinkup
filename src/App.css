@@ -3,9 +3,29 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'poppins';
+}
+
+input {
+    outline: none;
+    /* tambahkan dekorasi atau penanda lainnya di sini */
+}
+
+/* Untuk Chrome dan Safari */
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
+/* Untuk Firefox */
+input[type="search"]::-webkit-search-clear-button {
+    display: none;
+}
+
+/* Untuk Edge */
+input[type="search"]::-ms-clear {
+    display: none;
 }

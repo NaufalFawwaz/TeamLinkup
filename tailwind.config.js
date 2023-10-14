@@ -17,7 +17,9 @@ module.exports = {
         'primary2': '#C9D8DA',
         'primary3': '#0E4751',
         'success' : '#07982F',
+        'success-2': '#00EF0A',
         'gray-text': '#949494',
+        'gray-text-2': '#A1A1A1'
       },
     },
   },

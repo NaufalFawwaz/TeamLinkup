@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom"
 import ContentLayout from "../Layout/ContentLayout"
 import { uiux, mobile, web, datasc, addPerson, image, websites } from "../assets"
-import PageLayout from "../Layout/PageLayout"
 
 export const Jumbotron = () => (
     <div className="flex flex-col items-center">
@@ -87,13 +86,13 @@ const About = () => {
 
 const Home = () => {
     return (
-        <PageLayout>
+        <div>
             <ContentLayout>
                 <Jumbotron />
                 <CardContainer />
             </ContentLayout>
             <About />
-        </PageLayout>
+        </div>
     )
 }
 
