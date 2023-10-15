@@ -114,7 +114,7 @@ const Event = () => {
                 <div className='flex flex-col flex-1 gap-14'>
                     <div className='flex flex-col w-full items-center'>
                         {/* Search */}
-                        <div className='w-2/4 flex flex-row gap-4 items-center border-2 border-primary3 px-6 py-2 rounded-lg'>
+                        <div className='w-[55%] flex flex-row gap-4 items-center border-2 border-primary3 px-6 py-2 rounded-lg'>
                             <BiSearchAlt className='text-4xl' />
                             <input
                                 type='search'

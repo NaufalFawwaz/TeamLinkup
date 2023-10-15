@@ -3,8 +3,8 @@ import ContentLayout from "../Layout/ContentLayout"
 import { uiux, mobile, web, datasc, addPerson, image, websites } from "../assets"
 
 export const Jumbotron = () => (
-    <div className="flex flex-col items-center">
-        <h1 className="text-primary3 text-[4.25rem] font-bold text-center">
+    <div className="flex flex-col items-center pb-8">
+        <h1 className="text-primary3 text-[4.25rem] font-bold text-center mb-8">
             Find the best people for <br /> candidates in your team
         </h1>
         <p className="text-gray-text text-center text-xl font-medium">Whenever you feel confused to find someone to be your partner in competition, TeamLinkup is <br />here to help you</p>
@@ -20,14 +20,14 @@ export const CardContainer = () => {
             description: "Kompetisi desain antarmuka pengguna (UI) dan pengalaman pengguna (UX), dimana peserta berlomba untuk menciptakan desain terbaik untuk suatu produk",
         },
         {
-            title: 'Web Development',
+            title: 'Development',
             img: web,
             description: "Kompeteisi di mana peserta bersaing untuk menciptakan dan mengembangkan situs web yang inovatif dan fungsional",
         },
         {
-            title: 'Mobile Devlopment',
+            title: 'Cyber Scurity',
             img: mobile,
-            description: " Kompetisi di mana peserta bersaing untuk menciptakan aplikasi mobile yang inovatif dan efisien",
+            description: "Kompetisi di mana peserta bersaing untuk menciptakan aplikasi mobile yang inovatif dan efisien",
         },
         {
             title: 'Data Science',

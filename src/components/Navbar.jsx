@@ -24,7 +24,7 @@ const navItem = [
 const Navbar = () => {
     const location = useLocation();
     return (
-        <div className='w-full p-4 flex justify-between flex-row items-center'>
+        <div className='w-full p-4 border-b border-primary3 flex justify-between flex-row items-center'>
             <NavLink to={'/'}>
                 <img src={logo} alt="logo" className="h-20 w-auto" />
             </NavLink>
