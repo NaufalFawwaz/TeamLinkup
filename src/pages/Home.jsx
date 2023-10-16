@@ -4,11 +4,11 @@ import { uiux, mobile, web, datasc, addPerson, image, websites } from "../assets
 
 export const Jumbotron = () => (
     <div className="flex flex-col items-center pb-8">
-        <h1 className="text-primary3 text-[4.25rem] font-bold text-center mb-8">
+        <h1 className="text-primary3 text-4xl sm:text-5xl 2xl:text-[4.25rem] font-bold text-center mb-8">
             Find the best people for <br /> candidates in your team
         </h1>
         <p className="text-gray-text text-center text-xl font-medium">Whenever you feel confused to find someone to be your partner in competition, TeamLinkup is <br />here to help you</p>
-        <NavLink className={'bg-success text-2xl rounded-lg font-semibold text-white py-[26px] text-center px-24 mt-14'} to={'/event'}>Get Started</NavLink>
+        <NavLink className={'bg-success text-xl sm:text-2xl rounded-lg font-semibold text-white py-6 sm:py-6 2xl:py-[26px] text-center w-[100px] px-16 sm:w-auto 2xl:w-[345px] mt-14'} to={'/event'}>Get Started</NavLink>
     </div>
 )
 
@@ -36,12 +36,12 @@ export const CardContainer = () => {
         },
     ]
     return (
-        <div className="pt-20 pb-32 grid grid-cols-4 gap-16">
+        <div className="pt-20 pb-32 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-16">
             {cardData.map(data => (
-                <div className="bg-success even:bg-primary3 even:mt-12 flex flex-col items-center h-full justify-between py-8 px-3 text-white text-center rounded-lg" key={data.title}>
+                <div className="bg-success even:bg-primary3 sm:even:mt-12 flex flex-col items-center h-full justify-between py-8 px-3 text-white text-center rounded-lg" key={data.title}>
                     <h2 className="text-2xl font-bold">{data.title}</h2>
-                    <img src={data.img} alt={data.title} className="w-[222px] h-auto" />
-                    <p className="max-w-[281px]">{data.description}</p>
+                    <img src={data.img} alt={data.title} className="w-[100px] sm:w-[150px] 2xl:w-[222px] h-auto" />
+                    <p className="sm:max-w-[281px] text-xl">{data.description}</p>
                 </div>
             ))}
         </div>
@@ -67,13 +67,13 @@ const About = () => {
         },
     ]
     return (
-        <div className="bg-primary2 pt-10 pb-16 text-center">
-            <h2 className="text-6xl font-bold text-primary3">About this website</h2>
+        <div className="bg-primary2 pt-10 pb-16 text-center px-2 sm:px-0">
+            <h2 className="text-4xl 2xl:text-6xl font-bold text-primary3">About this website</h2>
             <p className="text-xl mt-5 font-medium">Teamlinkup kali ini mempunyai beberapa keunggulan diantaranya seperti berikut</p>
-            <div className="mt-14 flex flex-row justify-evenly">
+            <div className="mt-14 gap-14 sm:gap-0 flex flex-col sm:flex-row justify-evenly">
                 {aboutData.map(data => (
                     <div className="flex flex-col gap-4 items-center justify-center">
-                        <img src={data.img} alt={data.title} className="w-[170px] h-[170px]" />
+                        <img src={data.img} alt={data.title} className="w-[100px] sm:w-[130px] 2xl:w-[170px] h-auto" />
                         <h3 className="font-bold text-3xl">{data.title}</h3>
                         <p className="text-xl font-medium w-[287px]">{data.desc}</p>
                     </div>

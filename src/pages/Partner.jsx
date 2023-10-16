@@ -5,6 +5,7 @@ import { Category } from "../components"
 import { profile } from "../assets"
 import { BsThreeDotsVertical } from "react-icons/bs"
 import { FaRegStar } from "react-icons/fa"
+import { userData } from "../assets/data/userData"
 
 const filterData = [
     {
@@ -125,30 +126,31 @@ const Partner = () => {
                         </div>
                     </div>
                     <div className='grid grid-cols-2 gap-10'>
-                        {[1, 2, 3, 4, 5, 6, 7, 8].map(data => (
-                            <div className="border-[3px] border-primary3 bg-transparent rounded-lg px-4 py-5">
+                        {userData.map(data => (
+                            <div key={data.name} className="border-[3px] border-primary3 bg-transparent rounded-lg px-4 py-5">
                                 <div className="flex flex-row gap-[18px] justify-start">
                                     <img src={profile} alt="profile" className="rounded-full h-[110px] w-[110px]" />
                                     <div className="flex-1">
                                         <div className="flex flex-row justify-between items-center">
-                                            <h3 className="text-primary3 text-[28px] font-semibold">Aldoardana Refih</h3>
+                                            <h3 className="text-primary3 text-[28px] font-semibold">{data.name}</h3>
                                             <div className="text-3xl flex gap-2 items-center">
                                                 <FaRegStar />
                                                 <BsThreeDotsVertical />
                                             </div>
                                         </div>
-                                        <p className="text-gray-text-2 text-lg">Brawijaya University</p>
-                                        <p className="text-gray-text-2 text-lg">Back End Developer</p>
+                                        <p className="text-gray-text-2 text-lg">{data.university}</p>
+                                        <p className="text-gray-text-2 text-lg">{data.role}</p>
+                                        {data.status.includes('Open') ? <p className="text-gray-text-2 text-lg">{data.team}</p> : null}
                                         <div className="flex flex-row gap-2 mt-2 text-lg font-medium items-center">
-                                            <div className="h-5 w-5 bg-success-2 rounded-full" />
-                                            Ready to take Competetion
+                                            <div className={`h-5 w-5 ${data.status.includes('Already') ? 'bg-error' : 'bg-success-2'} rounded-full`} />
+                                            {data.status}
                                         </div>
                                     </div>
                                 </div>
                                 <div className="flex flex-row mt-6 w-full justify-end gap-16">
-                                    <div className="w-[177px] bg-primary3 py-2 text-center text-white rounded-lg font-semibold">
+                                    <NavLink to={`/profile/${data.name}`} className="w-[177px] bg-primary3 py-2 text-center text-white rounded-lg font-semibold">
                                         See Detail
-                                    </div>
+                                    </NavLink>
                                     <div className="w-[177px] bg-primary3 py-2 text-center text-white rounded-lg font-semibold">
                                         Add Team
                                     </div>

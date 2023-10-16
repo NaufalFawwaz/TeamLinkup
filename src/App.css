@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    @apply 2xl:text-[16px] lg:text-[12px] text-[10px]
+}
+
 body {
     margin: 0;
     padding: 0;

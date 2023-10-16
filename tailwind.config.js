@@ -19,7 +19,8 @@ module.exports = {
         'success' : '#07982F',
         'success-2': '#00EF0A',
         'gray-text': '#949494',
-        'gray-text-2': '#A1A1A1'
+        'gray-text-2': '#A1A1A1',
+        'error': '#EB4335'
       },
     },
   },

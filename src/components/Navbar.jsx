@@ -33,7 +33,7 @@ const Navbar = () => {
                     <NavLink className={`hover:text-primary3 ${location.pathname == data.url ? 'text-primary3' : "text-gray-text"}`} to={data.url}>{data.name}</NavLink>
                 ))}
             </div>
-            <NavLink>
+            <NavLink to={'/profile'}>
                 <CgProfile className="h-16 w-auto text-primary3"/>
             </NavLink>
         </div>

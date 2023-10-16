@@ -6,7 +6,7 @@ const EventDetail = () => {
         <ContentLayout>
             <div className="grid grid-cols-2 gap-6 py-10">
                 <img src={banner} alt="banner" className="w-full" />
-                <div className="bg-primary3 text-white py-10 px-8 flex flex-col items-center">
+                <div className="bg-primary3 rounded-lg text-white py-10 px-8 flex flex-col items-center">
                     <h3 className="text-[32px] flex font-bold max-w-[338px] text-center">Smart IT Festival IT Competition 2022</h3>
                     <div className="text-2xl font-medium ">
                         <p className="text-center mt-10">INVATION-Study Case is a competition that invites students throughout Indonesia to provide innovations and solutions to real problems faced by corporate partners. This activity is accompanied by a Corporate Webinar that provides education and information on professionalism topics that students will face in the future.</p>
