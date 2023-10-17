@@ -158,8 +158,8 @@ const Teams = () => {
     <ContentLayout>
       <Toaster />
       <div className="flex items-center justify-center pb-10">
-        <div className="w-[80%] bg-primary3 py-10 px-[52px] rounded-lg">
-          <div className="bg-white px-11 py-4 pb-10 rounded-lg">
+        <div className="w-full sm:w-[80%] bg-primary3 py-10 px-4 sm:px-[52px] rounded-lg">
+          <div className="bg-white px-4 sm:px-11 py-4 sm:py-4 pb-4 sm:pb-10 rounded-lg">
             <div className="flex flex-row items-center gap-6 text-3xl font-semibold mb-5 text-primary3">
               <MdOutlineNotificationsNone className="text-6xl" />
               Notification
@@ -188,16 +188,16 @@ const Teams = () => {
               <p className="text-center text-2xl">Tidak ada notifikasi saat ini</p>
             }
           </div>
-          <div className="flex flex-row mt-[52px]">
-            <div className="w-[60%]">
+          <div className="flex flex-row mt-10 sm:mt-[52px]">
+            <div className="w-full sm:w-[60%]">
               <div className="flex flex-row items-center justify-between mb-5">
                 <h3 className="text-3xl text-white font-semibold" >Team Competition</h3>
                 <button className="bg-white py-2 px-4 text-xl text-primary3 font-semibold rounded-lg">+ New Team</button>
               </div>
             </div>
           </div>
-          <div className="flex flex-row gap-14">
-            <div className="w-[60%]">
+          <div className="flex flex-col-reverse sm:flex-row gap-6 sm:gap-14">
+            <div className="w-full sm:w-[60%]">
               <div className="bg-white px-6 py-7 rounded-lg w-full flex flex-col gap-6">
                 {teamData.map((data, index) => (
                   <TeamDropDown key={data.name} teamData={data} index={index} isActive={isActive} setIsActive={setIsActive} />

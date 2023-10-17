@@ -8,7 +8,7 @@ export const Jumbotron = () => (
             Find the best people for <br /> candidates in your team
         </h1>
         <p className="text-gray-text text-center text-xl font-medium">Whenever you feel confused to find someone to be your partner in competition, TeamLinkup is <br />here to help you</p>
-        <NavLink className={'bg-success text-xl sm:text-2xl rounded-lg font-semibold text-white py-6 sm:py-6 2xl:py-[26px] text-center w-[100px] px-16 sm:w-auto 2xl:w-[345px] mt-14'} to={'/event'}>Get Started</NavLink>
+        <NavLink className={'bg-success text-xl sm:text-2xl rounded-lg font-semibold text-white py-6 sm:py-6 2xl:py-[26px] text-center w-[100px] sm:px-16 sm:w-auto 2xl:w-[345px] mt-14'} to={'/event'}>Get Started</NavLink>
     </div>
 )
 

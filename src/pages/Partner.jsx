@@ -109,14 +109,14 @@ const filterData = [
 const Partner = () => {
     return (
         <ContentLayout>
-            <div className='flex flex-row w-full gap-14 pb-10'>
+            <div className='flex flex-col sm:flex-row w-full gap-14 pb-10'>
                 {/* Category */}
                 <Category data={filterData} />
                 {/* Content */}
                 <div className='flex flex-col flex-1 gap-14'>
                     <div className='flex flex-col w-full items-center'>
                         {/* Search */}
-                        <div className='w-2/4 flex flex-row gap-4 items-center border-2 border-primary3 px-6 py-2 rounded-lg'>
+                        <div className='w-full sm:w-[55%] flex flex-row gap-4 items-center border-2 border-primary3 px-6 py-2 rounded-lg'>
                             <BiSearchAlt className='text-4xl' />
                             <input
                                 type='search'
@@ -125,14 +125,14 @@ const Partner = () => {
                             </input>
                         </div>
                     </div>
-                    <div className='grid grid-cols-2 gap-10'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 gap-10'>
                         {userData.map(data => (
                             <div key={data.name} className="border-[3px] border-primary3 bg-transparent rounded-lg px-4 py-5">
                                 <div className="flex flex-row gap-[18px] justify-start">
-                                    <img src={profile} alt="profile" className="rounded-full h-[110px] w-[110px]" />
+                                    <img src={profile} alt="profile" className="rounded-full h-28 sm:h-[110px] w-auto" />
                                     <div className="flex-1">
                                         <div className="flex flex-row justify-between items-center">
-                                            <h3 className="text-primary3 text-[28px] font-semibold">{data.name}</h3>
+                                            <h3 className="text-primary3 text-3xl sm:text-[28px] font-semibold">{data.name}</h3>
                                             <div className="text-3xl flex gap-2 items-center">
                                                 <FaRegStar />
                                                 <BsThreeDotsVertical />
