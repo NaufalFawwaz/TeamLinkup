@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Route, Routes, Outlet, useLocation } from 'react-router-dom'
 import './App.css'
-import { Home, Login, Event, Partner, EventDetail, Profile } from './pages'
+import { Home, Login, Event, Partner, EventDetail, Profile, FindTeam } from './pages'
 import ContentRoutes from './Routes/ContentRoutes'
 import Teams from './pages/Teams'
 
@@ -26,6 +26,7 @@ function App() {
             <Route path="/partner" element={<Partner />} />
             <Route path="/event/:id" element={<EventDetail />} />   
             <Route path="/teams" element={<Teams />} /> 
+            <Route path="/find-team" element={<FindTeam />} /> 
             <Route path="/profile" element={<Profile />} /> 
             <Route path="/profile/:name" element={<Profile />} /> 
           </Route>

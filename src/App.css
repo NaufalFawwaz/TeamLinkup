@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+html {
     @apply 2xl:text-[16px] lg:text-[12px] text-[10px]
 }
 
@@ -16,20 +16,39 @@ body {
 
 input {
     outline: none;
-    /* tambahkan dekorasi atau penanda lainnya di sini */
 }
 
-/* Untuk Chrome dan Safari */
+textarea:focus {
+    outline: none;
+}
+
+/* Chrome dan Safari */
 input[type="search"]::-webkit-search-cancel-button {
     display: none;
 }
 
-/* Untuk Firefox */
+/* Firefox */
 input[type="search"]::-webkit-search-clear-button {
     display: none;
 }
 
-/* Untuk Edge */
+/* Edge */
 input[type="search"]::-ms-clear {
     display: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 2px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #0E4751;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

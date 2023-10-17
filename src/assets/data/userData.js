@@ -1,33 +1,5 @@
 export const userData = [
     {
-        name: 'John Doe',
-        university: 'Universitas Indonesia',
-        role: 'Front End Developer',
-        team: 'Team Alpha',
-        status: 'Open Recruitment'
-    },
-    {
-        name: 'Alice Smith',
-        university: 'Universitas Brawijaya',
-        role: 'Back End Developer',
-        team: 'Team Bravo',
-        status: 'Open Recruitment'
-    },
-    {
-        name: 'Bob Johnson',
-        university: 'Universitas A',
-        role: 'UI/UX Designer',
-        team: 'Team Charlie',
-        status: 'Open Recruitment'
-    },
-    {
-        name: 'Eve Anderson',
-        university: 'Universitas B',
-        role: 'Product Manager',
-        team: 'Team Delta',
-        status: 'Open Recruitment'
-    },
-    {
         name: 'Charlie Brown',
         university: 'Universitas C',
         role: 'Software Engineer',
@@ -76,9 +48,9 @@ export const userData = [
         status: 'Ready to take Competition'
     },
     {
-        name: 'Karen King',
-        university: 'Universitas K',
-        role: 'Product Manager',
+        name: 'Mineze',
+        university: 'Universitas Brawijaya',
+        role: 'Frontend Developer',
         status: 'Ready to take Competition'
     },
     {
