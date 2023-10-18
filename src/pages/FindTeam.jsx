@@ -19,7 +19,7 @@ const RecruitmentCard = ({ data }) => {
     }
 
     return(
-    <div key={data.name} className="border-[3px] border-primary3 bg-transparent rounded-lg px-4 py-5 h-fit">
+    <div key={data.name} className="border-[3px] border-primary3 bg-transparent rounded-lg px-4 py-5">
         <div className="flex flex-col justify-between h-full">
             <div className="flex flex-row gap-[18px] justify-start">
                 <img src={profile} alt="profile" className="rounded-full h-28 sm:h-[110px] w-auto" />
@@ -91,7 +91,7 @@ const FindTeam = () => {
                 {/* Category */}
                 <Category data={CategoryEvent} onSelectCategory={handleCategorySelect} />
                 {/* Content */}
-                <div className='grid grid-cols-1 sm:grid-cols-2 gap-10'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-10 h-fit'>
                     {filteredData.map((data, index) => (
                         <RecruitmentCard data={data} key={index} />
                     ))}
