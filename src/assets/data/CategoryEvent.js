@@ -24,7 +24,7 @@ export const CategoryEvent = [
         title: 'Cyber Security',
         children: [
             {
-                title: 'Capture the Flag (CFG)',
+                title: 'Capture the Flag',
                 isChecked: false
             },
             {

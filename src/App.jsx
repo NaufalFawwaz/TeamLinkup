@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
 import { Route, Routes, Outlet, useLocation } from 'react-router-dom'
 import './App.css'
-import { Home, Login, Event, Partner, EventDetail, Profile, FindTeam } from './pages'
+import { Home, Login, Event, Partner, EventDetail, Profile, FindTeam, Signup } from './pages'
 import ContentRoutes from './Routes/ContentRoutes'
 import Teams from './pages/Teams'
+import PrivateRoutes from './Routes/PrivateRoutes'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -19,7 +20,10 @@ function App() {
   return (
     <Routes>
         <Route element={<ScrollToTop />}>
-          <Route path="/login" element={<Login />} />
+          <Route element={<PrivateRoutes />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Route>
           <Route element={<ContentRoutes />}>
             <Route path="/" element={<Home />} />
             <Route path="/event" element={<Event />} />

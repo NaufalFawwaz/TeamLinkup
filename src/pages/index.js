@@ -1,4 +1,5 @@
 import Login from "./Login";
+import Signup from "./Signup";
 import Home from "./Home";
 import Event from "./Event";
 import Partner from "./Partner";
@@ -8,6 +9,7 @@ import FindTeam from "./FindTeam";
 
 export {
     Login,
+    Signup,
     Home,
     Event,
     Partner,

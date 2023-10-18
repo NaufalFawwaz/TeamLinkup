@@ -40,19 +40,19 @@ const team = [
       {
         name: "Hanif Robby",
         status: "Leader",
-        role: "Frontend Developer",
+        role: "Frontend Web Developer",
         university: "Universitas Brawijaya"
       },
       {
         name: "Radoalnoid",
         status: "Member",
-        role: "Software Engineer",
+        role: "Bakcend Developer",
         university: "Universitas Brawijaya"
       },
       {
         name: "Lauren",
         status: "Member",
-        role: "UX Designer",
+        role: "UI/UX Designer",
         university: "Universitas Brawijaya"
       }
     ]
@@ -63,13 +63,13 @@ const team = [
       {
         name: "Naufal Fawwaz",
         status: "Leader",
-        role: "Product Designer",
+        role: "UI/UX Designer",
         university: "Universitas Brawijaya"
       },
       {
         name: "Nauval Fahreza ",
         status: "Member",
-        role: "Software Developer",
+        role: "Frontend Web Developer",
         university: "Universitas Brawijaya"
       },
       {
@@ -84,16 +84,16 @@ const team = [
     name: "Team Tiga",
     member: [
       {
+        name: "Hanif Robby",
+        status: "Member",
+        role: "Frontend Web Developer",
+        university: "Universitas Brawijayar"
+      },
+      {
         name: "Satria",
         status: "Leader",
         role: "Product Manager",
         university: "Universitas Brawijaya"
-      },
-      {
-        name: "Hanif Robby",
-        status: "Member",
-        role: "Frontend Developer",
-        university: "Universitas Brawijayar"
       },
       {
         name: "Rina",
@@ -125,7 +125,6 @@ const TeamDropDown = ({ teamData, index, isActive, setIsActive }) => {
           {teamData.name}
         </button>
         <div className="flex flex-row gap-3 items-center text-3xl">
-          <AiOutlinePlusCircle />
           <BsThreeDotsVertical />
         </div>
       </div>
@@ -165,9 +164,9 @@ const Teams = () => {
           university: "Universitas Brawijaya"
         },
         {
-          name: "Nauval Fahreza",
+          name: "Hanif Robby",
           status: "Member",
-          role: "Software Developer",
+          role: "Frontend Web Developer",
           university: "Universitas Brawijaya"
         },
       ]

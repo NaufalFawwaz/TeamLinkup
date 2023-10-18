@@ -7,7 +7,7 @@ export const eventData = [
     {
         id: 2,
         title: 'Cyber Security Challenge',
-        category: ['Capture the Flag (CFG)', 'Pentest']
+        category: ['Capture the Flag', 'Pentest']
     },
     {
         id: 3,

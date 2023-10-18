@@ -2,25 +2,25 @@ export const userData = [
     {
         name: 'Charlie Brown',
         university: 'Universitas C',
-        role: 'Software Engineer',
+        role: 'Frontend Mobile Developer',
         status: 'Ready to take Competition'
     },
     {
         name: 'David Davis',
         university: 'Universitas D',
-        role: 'Front End Developer',
+        role: 'Backend Developer',
         status: 'Ready to take Competition'
     },
     {
         name: 'Emily Evans',
         university: 'Universitas E',
-        role: 'UI/UX Designer',
+        role: 'UI Designer',
         status: 'Ready to take Competition'
     },
     {
         name: 'Frankie Franklin',
         university: 'Universitas F',
-        role: 'Software Developer',
+        role: 'Full Stack Developer',
         status: 'Ready to take Competition'
     },
     {
@@ -32,7 +32,7 @@ export const userData = [
     {
         name: 'Harry Harris',
         university: 'Universitas H',
-        role: 'Front End Developer',
+        role: 'Mobile App Frontend Developer',
         status: 'Ready to take Competition'
     },
     {
@@ -44,31 +44,31 @@ export const userData = [
     {
         name: 'Jack Johnson',
         university: 'Universitas J',
-        role: 'Software Developer',
+        role: 'Game Developer',
         status: 'Ready to take Competition'
     },
     {
         name: 'Mineze',
         university: 'Universitas Brawijaya',
-        role: 'Frontend Developer',
+        role: 'Frontend Web Developer',
         status: 'Ready to take Competition'
     },
     {
         name: 'Liam Lee',
         university: 'Universitas L',
-        role: 'Front End Developer',
+        role: 'Data Scientist',
         status: 'Already to take Competition'
     },
     {
         name: 'Mia Mitchell',
         university: 'Universitas M',
-        role: 'UI/UX Designer',
+        role: 'Data Analyst',
         status: 'Already to take Competition'
     },
     {
         name: 'Nathan Nelson',
         university: 'Universitas N',
-        role: 'Software Developer',
+        role: 'UI Designer',
         status: 'Already to take Competition'
     },
     {
@@ -80,19 +80,19 @@ export const userData = [
     {
         name: 'Peter Parker',
         university: 'Universitas P',
-        role: 'Front End Developer',
+        role: 'Backend Developer',
         status: 'Already to take Competition'
     },
     {
         name: 'Quincy Quinn',
         university: 'Universitas Q',
-        role: 'UI/UX Designer',
+        role: 'Product Manager',
         status: 'Already to take Competition'
     },
     {
         name: 'Rachel Reed',
         university: 'Universitas R',
-        role: 'Software Developer',
+        role: 'Cyber Security Specialist',
         status: 'Already to take Competition'
     }
 ];

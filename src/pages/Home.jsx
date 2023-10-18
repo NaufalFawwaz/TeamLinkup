@@ -20,12 +20,12 @@ export const CardContainer = () => {
             description: "Kompetisi desain antarmuka pengguna (UI) dan pengalaman pengguna (UX), dimana peserta berlomba untuk menciptakan desain terbaik untuk suatu produk",
         },
         {
-            title: 'Development',
+            title: 'Website Development',
             img: web,
             description: "Kompeteisi di mana peserta bersaing untuk menciptakan dan mengembangkan situs web yang inovatif dan fungsional",
         },
         {
-            title: 'Cyber Scurity',
+            title: 'Mobile Development',
             img: mobile,
             description: "Kompetisi di mana peserta bersaing untuk menciptakan aplikasi mobile yang inovatif dan efisien",
         },

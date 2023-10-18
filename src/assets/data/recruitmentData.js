@@ -20,7 +20,7 @@ export const recruitmentData = [
         recruitment: {
             team: 'Security Team',
             competition: 'Cyber Security Competition',
-            category: 'Capture the Flag (CFG)',
+            category: 'Capture the Flag',
             message: `- Looking for Backend Developer
             - Need Security Analyst`
         }
@@ -42,7 +42,7 @@ export const recruitmentData = [
         name: 'Alex Johnson',
         university: 'Universitas F',
         role: 'Mobile Developer',
-        status: 'Looking for Teammates',
+        status: 'Ready to take competition',
         recruitment: {
             team: 'App Builders',
             competition: 'Mobile Development Hackathon',
@@ -55,7 +55,7 @@ export const recruitmentData = [
         name: 'Sarah Williams',
         university: 'Universitas G',
         role: 'Data Analyst',
-        status: 'Open for Collaboration',
+        status: 'Ready to take competition',
         recruitment: {
             team: 'Data Wizards',
             competition: 'Data Science Challenge',
@@ -68,7 +68,7 @@ export const recruitmentData = [
         name: 'Michael Johnson',
         university: 'Universitas H',
         role: 'Game Developer',
-        status: 'Ready for New Projects',
+        status: 'Ready to take competition',
         recruitment: {
             team: 'Game Makers',
             competition: 'Indie Game Development Contest',

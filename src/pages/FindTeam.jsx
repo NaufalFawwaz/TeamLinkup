@@ -8,9 +8,18 @@ import { FaRegStar } from "react-icons/fa"
 import { recruitmentData } from "../assets/data/recruitmentData"
 import { CategoryEvent } from "../assets/data/CategoryEvent"
 import { useState } from "react"
+import toast, {Toaster} from "react-hot-toast"
 
-const RecruitmentCard = ({ data }) => (
-    <div key={data.name} className="border-[3px] border-primary3 bg-transparent rounded-lg px-4 py-5">
+const RecruitmentCard = ({ data }) => {
+    function handleRequestJoin(){
+        toast.success(`Request has been sent`, {
+            position: 'bottom-right',
+            className: 'text-xl font-medium p-4'
+        });
+    }
+
+    return(
+    <div key={data.name} className="border-[3px] border-primary3 bg-transparent rounded-lg px-4 py-5 h-fit">
         <div className="flex flex-col justify-between h-full">
             <div className="flex flex-row gap-[18px] justify-start">
                 <img src={profile} alt="profile" className="rounded-full h-28 sm:h-[110px] w-auto" />
@@ -48,21 +57,17 @@ const RecruitmentCard = ({ data }) => (
                 <NavLink to={`/profile/${data.name}`} className="w-[177px] bg-primary3 py-2 text-center text-white rounded-lg font-semibold">
                     See Detail
                 </NavLink>
-                <div className="w-[177px] bg-primary3 py-2 text-center text-white rounded-lg font-semibold">
-                    Add Team
-                </div>
+                <button onClick={handleRequestJoin} className="w-[177px] bg-primary3 py-2 text-center text-white rounded-lg font-semibold">
+                    Request Join
+                </button>
             </div>
         </div>
+        <Toaster />
     </div>
-)
+)}
 
 const FindTeam = () => {
-    const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategories, setSelectedCategories] = useState([]);
-
-    const handleSearch = (event) => {
-        setSearchTerm(event.target.value);
-    };
 
     const handleCategorySelect = (category) => {
         if (selectedCategories.includes(category)) {
@@ -80,37 +85,16 @@ const FindTeam = () => {
         });
     }
 
-    if (searchTerm) {
-        filteredData = filteredData.filter((data) => {
-            return data.name.toLowerCase().includes(searchTerm.toLowerCase());
-        });
-    }
-
     return (
         <ContentLayout>
             <div className='flex flex-col sm:flex-row w-full gap-14 pb-10'>
                 {/* Category */}
                 <Category data={CategoryEvent} onSelectCategory={handleCategorySelect} />
                 {/* Content */}
-                <div className='flex flex-col flex-1 gap-14'>
-                    <div className='flex flex-col w-full items-center'>
-                        {/* Search */}
-                        <div className='w-full sm:w-[55%] flex flex-row gap-4 items-center border-2 border-primary3 px-6 py-2 rounded-lg'>
-                            <BiSearchAlt className='text-4xl' />
-                            <input
-                                type='search'
-                                placeholder='Search'
-                                className='text-2xl text-primary3 flex-1'
-                                value={searchTerm}
-                                onChange={handleSearch}
-                            />
-                        </div>
-                    </div>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 gap-10'>
-                        {filteredData.map((data, index) => (
-                            <RecruitmentCard data={data} key={index} />
-                        ))}
-                    </div>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-10'>
+                    {filteredData.map((data, index) => (
+                        <RecruitmentCard data={data} key={index} />
+                    ))}
                 </div>
             </div>
         </ContentLayout>

@@ -11,6 +11,7 @@ import websites from './websites.png'
 import addPerson from './addPerson.png'
 import image from './image.png'
 import banner from './banner.png'
+import bannerc from './bannerc.png'
 import profile from './profile.png'
 import pprobby from './pprobby.png'
 import gerindra from './gerindra.png'
@@ -30,6 +31,7 @@ export {
     addPerson,
     image,
     banner,
+    bannerc,
     profile,
     pprobby,
     gerindra,

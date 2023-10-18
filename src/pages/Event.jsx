@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ContentLayout from '../Layout/ContentLayout';
 import { BiSearchAlt } from 'react-icons/bi';
-import { banner } from '../assets';
+import { bannerc } from '../assets';
 import { NavLink } from 'react-router-dom';
 import { Category } from '../components';
 import { CategoryEvent } from '../assets/data/CategoryEvent';
@@ -62,7 +62,7 @@ const Event = () => {
                             <NavLink to={`/event/${data.id}`} key={data.id} className='border-[3px] border-primary3 rounded-lg flex flex-col pt-2 pb-2 px-2 hover:bg-primary3/10'>
                                 <div className='flex flex-col items-center text-center'>
                                     <h3 className='text-xl sm:text-2xl font-bold text-primary3 h-16 flex items-center'>{data.title}</h3>
-                                    <img src={banner} alt={`banner ${data}`} className='sm:w-4/5' />
+                                    <img src={bannerc} alt={`banner ${data}`} className='sm:w-4/5' />
                                 </div>
                                 <p className='text-base font-medium text-gray-text flex items-end flex-1'>Category : {data.category.join(", ")}</p>
                             </NavLink>

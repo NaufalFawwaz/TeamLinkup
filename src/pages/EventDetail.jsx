@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import { banner } from "../assets"
 import ContentLayout from "../Layout/ContentLayout"
 
@@ -28,12 +29,12 @@ const EventDetail = () => {
                     </div>
                     <div className="flex-1 w-full flex items-center justify-center">
                         <div className="flex flex-row gap-10">
-                            <div className="w-[130px] sm:w-[200px] bg-white rounded-lg text-primary3 font-bold text-lg sm:text-xl py-2 text-center">
+                            <NavLink to={'/partner'} className="w-[130px] sm:w-[200px] bg-white rounded-lg text-primary3 font-bold text-lg sm:text-xl py-2 text-center">
                                 Get Partner
-                            </div>
-                            <div className="w-[130px] sm:w-[200px] bg-white rounded-lg text-primary3 font-bold text-lg sm:text-xl py-2 text-center">
+                            </NavLink>
+                            <NavLink to={'/'} className="w-[130px] sm:w-[200px] bg-white rounded-lg text-primary3 font-bold text-lg sm:text-xl py-2 text-center">
                                 More Information
-                            </div>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
