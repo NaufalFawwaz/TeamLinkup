@@ -14,7 +14,7 @@ const Category = ({ data, onSelectCategory }) => {
     };
 
     return (
-        <div className='bg-primary3 py-3 px-2 sm:px-6 rounded-lg w-full sm:w-[24%] h-fit'>
+        <div className='bg-primary3 py-3 px-2 sm:px-6 rounded-lg w-full sm:w-fit h-fit'>
             <h2 className='text-3xl font-bold text-white text-center'>Category</h2>
             <div className='h-px bg-white my-7' />
             <div className='w-full grid grid-cols-2 sm:grid-cols-1'>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ContentLayout from '../Layout/ContentLayout'
-import { gerindra, otherbg, pprobby, profile } from '../assets'
+import { otherbg, pprobby, profile } from '../assets'
 import { useParams } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast'
 
@@ -9,7 +9,7 @@ const Profile = () => {
     const [isEdit, setIsEdit] = useState(false)
     const [isAdd, setIsAdd] = useState(false)
     const [userData, setUserData] = useState({
-        background: gerindra,
+        background: otherbg,
         nama: "Hanif Robby",
         profile: pprobby,
         noTelp: "08xxxxxxxxxx",

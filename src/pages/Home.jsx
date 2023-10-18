@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 import ContentLayout from "../Layout/ContentLayout"
-import { uiux, mobile, web, datasc, addPerson, image, websites } from "../assets"
+import { uiux, mobile, web, datasc, addPerson, image, websites, security } from "../assets"
 
 export const Jumbotron = () => (
     <div className="flex flex-col items-center pb-8">
@@ -20,14 +20,14 @@ export const CardContainer = () => {
             description: "Kompetisi desain antarmuka pengguna (UI) dan pengalaman pengguna (UX), dimana peserta berlomba untuk menciptakan desain terbaik untuk suatu produk",
         },
         {
-            title: 'Website Development',
-            img: web,
-            description: "Kompeteisi di mana peserta bersaing untuk menciptakan dan mengembangkan situs web yang inovatif dan fungsional",
+            title: 'Development',
+            img: mobile,
+            description: "Kompeteisi di mana peserta bersaing untuk menciptakan dan mengembangkan aplikasi dan website yang inovatif dan fungsional",
         },
         {
-            title: 'Mobile Development',
-            img: mobile,
-            description: "Kompetisi di mana peserta bersaing untuk menciptakan aplikasi mobile yang inovatif dan efisien",
+            title: 'Cyber Scurity',
+            img: security,
+            description: "Peserta bersaing dalam mengidentifikasi, melindungi, dan mengamankan sistem, jaringan, dan data dari berbagai ancaman siber.",
         },
         {
             title: 'Data Science',

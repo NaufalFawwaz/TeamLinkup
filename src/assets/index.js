@@ -12,9 +12,9 @@ import addPerson from './addPerson.png'
 import image from './image.png'
 import banner from './banner.png'
 import bannerc from './bannerc.png'
+import security from './security.png'
 import profile from './profile.png'
 import pprobby from './pprobby.png'
-import gerindra from './gerindra.png'
 import otherbg from './otherbg.png'
 
 export {
@@ -32,8 +32,8 @@ export {
     image,
     banner,
     bannerc,
+    security,
     profile,
     pprobby,
-    gerindra,
     otherbg
 }
