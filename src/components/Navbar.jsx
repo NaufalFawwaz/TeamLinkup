@@ -119,10 +119,10 @@ const Navbar = () => {
                     <div className={`${isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[100%]"} z-50 fixed pt-16 pb-40 flex flex-col items-center justify-between font-semibold w-full bg-white h-full transition-all`}>
                         <div className='flex flex-col items-center gap-12 text-2xl font-bold text-system-white text-primary3'>
                             {localStorage.getItem('login') ? dropdown.map(data => (
-                                <NavLink to={data.url}>{data.name}</NavLink>
+                                <NavLink onClick={() => setIsOpen(false)} to={data.url}>{data.name}</NavLink>
                             )) : null}
                             {navItem.map(data => (
-                                <NavLink to={data.url}>{data.name}</NavLink>
+                                <NavLink onClick={() => setIsOpen(false)} to={data.url}>{data.name}</NavLink>
                             ))}
                         </div>
                         {localStorage.getItem('login') ?
