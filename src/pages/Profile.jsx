@@ -14,7 +14,7 @@ const Profile = () => {
         profile: pprobby,
         noTelp: "08xxxxxxxxxx",
         universitas: "Universitas Brawijaya",
-        idLine: "akusukahutao",
+        idLine: "",
         fakultas: "Ilmu Komputer",
         prestasi: `Juara 2 UI/UX it COM google 2023
 Juara 3 Web dev gemastik UB 2022`,
