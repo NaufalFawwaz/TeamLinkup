@@ -174,7 +174,7 @@ const Teams = () => {
     setTeamData([...teamData, newTeam])
     toast.success('Sukses menambahkan kelompok', {
       position: 'bottom-right',
-      className: 'text-xl font-medium p-4'
+      className: 'text-xl font-medium p-4 w-fit'
     });
     setIsAcc(true)
   }

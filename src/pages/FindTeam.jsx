@@ -91,7 +91,7 @@ const FindTeam = () => {
                 {/* Category */}
                 <Category data={CategoryEvent} onSelectCategory={handleCategorySelect} />
                 {/* Content */}
-                <div className='grid grid-cols-1 sm:grid-cols-2 gap-10 h-fit'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-10 h-fit sm:flex-1'>
                     {filteredData.map((data, index) => (
                         <RecruitmentCard data={data} key={index} />
                     ))}

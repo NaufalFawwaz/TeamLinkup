@@ -47,7 +47,7 @@ const UserCard = ({ data, index, setIsAddMember, isAddMember }) => {
                         Add Team
                     </button>
                     {isAddMember === index ?
-                        <div className="absolute flex flex-col text-xl text-primary3 font-semibold gap-1 left-0 w-full rounded-lg border border-primary3 bg-white px-4 py-5">
+                        <div className="absolute flex flex-col text-xl text-primary3 font-semibold gap-1 left-0 w-full rounded-lg border border-primary3 bg-white px-2 py-5">
                             {["Hunter Team", "Team Tiga"].map(data => (
                                 <button onClick={handleAddMember} className="flex flex-row items-center gap-2">
                                     <div className="bg-gray-400 rounded-full h-3 w-3"></div>
@@ -100,7 +100,7 @@ const Partner = () => {
                 {/* Category */}
                 <Category data={CategoryUser} onSelectCategory={handleCategorySelect} />
                 {/* Content */}
-                <div className='flex flex-col flex-1 gap-14'>
+                <div className='flex flex-col flex-1 gap-14 sm:flex-1'>
                     <div className='flex flex-col w-full items-center'>
                         {/* Search */}
                         <div className='w-full sm:w-[55%] flex flex-row gap-4 items-center border-2 border-primary3 px-6 py-2 rounded-lg'>
