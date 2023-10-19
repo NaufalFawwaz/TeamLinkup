@@ -46,7 +46,7 @@ Juara 3 Web dev gemastik UB 2022`,
                 profile: pprobby,
                 noTelp: "08xxxxxxxxxx",
                 universitas: "Universitas Brawijaya",
-                idLine: "akusukahutao",
+                idLine: "hanif_robby",
                 fakultas: "Ilmu Komputer",
                 prestasi: `Juara 2 UI/UX it COM google 2023
 Juara 3 Web dev gemastik UB 2022`,
