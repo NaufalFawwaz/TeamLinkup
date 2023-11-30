@@ -3,7 +3,7 @@ import { Outlet, Navigate } from "react-router-dom"
 const PrivateRoutes = () => {
     return (
         <>
-            {localStorage.getItem('login') ?
+            {localStorage.getItem('uid') ?
                 <Navigate to={'/'} />
                 :
                 <Outlet />}
