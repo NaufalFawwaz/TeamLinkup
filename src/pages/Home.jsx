@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 import ContentLayout from "../Layout/ContentLayout"
-import { uiux, mobile, web, datasc, addPerson, image, websites, security } from "../assets"
+import { uiux, mobile, datasc, addPerson, image, websites, security } from "../assets"
 
 export const Jumbotron = () => (
     <div className="flex flex-col items-center pb-8">
@@ -72,7 +72,7 @@ const About = () => {
             <p className="text-xl mt-5 font-medium">Teamlinkup kali ini mempunyai beberapa keunggulan diantaranya seperti berikut</p>
             <div className="mt-14 gap-14 sm:gap-0 flex flex-col sm:flex-row justify-evenly">
                 {aboutData.map(data => (
-                    <div className="flex flex-col gap-4 items-center justify-center">
+                    <div key={data.title} className="flex flex-col gap-4 items-center justify-center">
                         <img src={data.img} alt={data.title} className="w-[100px] sm:w-[130px] 2xl:w-[170px] h-auto" />
                         <h3 className="font-bold text-3xl">{data.title}</h3>
                         <p className="text-xl font-medium w-[287px]">{data.desc}</p>

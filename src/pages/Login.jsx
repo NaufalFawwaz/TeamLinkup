@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import { google, line, loginImage, } from "../assets"
 import { BsCheck } from 'react-icons/bs'
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/Provider";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 const Login = () => {
+    const repository = useContext(AppContext).repository;
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -13,12 +17,40 @@ const Login = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        localStorage.setItem('login', true)
-        navigate('/')
+        toast.loading("Sedang mengecek kredensial")
+        repository.userLogin(
+            email,
+            password,
+            () => {
+                toast.dismiss()
+                toast.success("Berhasil login, tunggu beberapa detik")
+                navigate("/")
+            },
+            (err) => {
+                toast.dismiss()
+                toast.error(err.message)
+            }
+        )
+    }
+
+    function handleGoogleLogin() {
+        toast.loading("Sedang mengecek kredensial")
+        repository.userLoginWithGoogle(
+            () => {
+                toast.dismiss()
+                toast.success("Berhasil login, tunggu beberapa detik")
+                navigate("/")
+            },
+            (err) => {
+                toast.dismiss()
+                toast.error(err.message)
+            }
+        )
     }
 
     return (
         <div className='w-full sm:flex sm:flex-row h-screen'>
+            <Toaster />
             <div className='bg-primary2 flex-col items-center justify-center h-full w-[55%] hidden sm:flex'>
                 <div className="flex flex-col gap-2 max-w-[90%]">
                     <h2 className="text-primary3 text-2xl w-[420px] font-bold">Discover the power of teamwork with TeamLinkup</h2>
@@ -33,10 +65,11 @@ const Login = () => {
                             <h2 className="text-4xl font-bold text-primary3">Login in to your account</h2>
                             <p className="font-medium text-gray-text mt-4">Welcome! Select method to log in:</p>
                             <div className="grid grid-cols-2 gap-5 lg:gap-[70px] mt-8">
-                                <div className="border border-solid border-black lg:w-[210px] py-3 px-6 rounded-lg flex flex-row items-center gap-4 text-2xl font-bold text-primary3">
+                                {/* Tambahkan fungsi login by google jika klik ini */}
+                                <button onClick={handleGoogleLogin} className="border border-solid border-black lg:w-[210px] py-3 px-6 rounded-lg flex flex-row items-center gap-4 text-2xl font-bold text-primary3">
                                     <img src={google} alt="google" className="w-auto h-10 sm:h-[45px]" />
                                     Google
-                                </div>
+                                </button>
                                 <div className="border border-solid border-black lg:w-[210px] py-3 px-6 rounded-lg flex flex-row items-center gap-4 text-2xl font-bold text-primary3">
                                     <img src={line} alt="google" className="w-auto h-12 sm:h-[45px]" />
                                     Line

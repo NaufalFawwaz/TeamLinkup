@@ -9,28 +9,28 @@ import { CategoryUser } from "../assets/data/CategoryUser"
 import toast, { Toaster } from "react-hot-toast"
 import { AppContext } from "../context/Provider"
 
-const UserCard = ({ data, index, setIsAddMember, isAddMember }) => {
+const MentorCard = ({ data, index, setIsAddMember, isAddMember }) => {
     function handleAddMember() {
         toast.success(`Invitation Succes`, {
             position: 'bottom-right',
             className: 'text-xl font-medium p-4'
         });
     }
-
+    
     return (
-        <div key={data.name} className="border-[3px] border-primary3 bg-transparent rounded-lg px-4 py-5">
+        <div key={data.nama} className="border-[3px] border-primary3 bg-transparent rounded-lg px-4 py-5">
             <div className="flex flex-row gap-[18px] justify-start">
                 <img src={profile} alt="profile" className="rounded-full h-28 sm:h-[110px] w-auto" />
                 <div className="flex-1">
                     <div className="flex flex-row justify-between items-center">
-                        <h3 className="text-primary3 text-3xl sm:text-[1.75rem] font-semibold">{data.name}</h3>
+                        <h3 className="text-primary3 text-3xl sm:text-[1.75rem] font-semibold">{data.nama}</h3>
                         <div className="text-3xl flex gap-2 items-center">
                             <FaRegStar />
                             <BsThreeDotsVertical />
                         </div>
                     </div>
                     <p className="text-gray-text-2 text-lg">{data.universitas}</p>
-                    <p className="text-gray-text-2 text-lg">{data.skill}</p>
+                    <p className="text-gray-text-2 text-lg">{data.major}</p>
                     <div className="flex flex-row gap-2 mt-2 text-lg font-medium items-center">
                         <div className={`h-5 w-5 ${data.status.includes('Already') ? 'bg-error' : 'bg-success-2'} rounded-full`} />
                         {data.status}
@@ -38,7 +38,7 @@ const UserCard = ({ data, index, setIsAddMember, isAddMember }) => {
                 </div>
             </div>
             <div className="flex flex-row mt-6 w-full justify-end gap-16">
-                <NavLink to={`/profile/${data.name}`} className="w-[177px] bg-primary3 py-2 text-center text-white rounded-lg font-semibold">
+                <NavLink to={`/profile/mentor/${data.id}`} className="w-[177px] bg-primary3 py-2 text-center text-white rounded-lg font-semibold">
                     See Detail
                 </NavLink>
                 <div className="relative">
@@ -63,7 +63,7 @@ const UserCard = ({ data, index, setIsAddMember, isAddMember }) => {
     )
 }
 
-const Partner = () => {
+const Mentor = () => {
     const { repository } = useContext(AppContext);
     const [isLoading, setIsLoading] = useState(false);
     const [userData, setUserData] = useState([])
@@ -73,7 +73,7 @@ const Partner = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        repository.getUser(
+        repository.getMentor(
             (userItem) => {
                 setIsLoading(false)
                 setUserData(userItem);
@@ -101,13 +101,13 @@ const Partner = () => {
 
     if (selectedCategories.length > 0) {
         filteredData = filteredData.filter((data) => {
-            return selectedCategories.includes(data.skill);
+            return selectedCategories.includes(data.major);
         });
     }
 
     if (searchTerm) {
         filteredData = filteredData.filter((data) => {
-            return data.name.toLowerCase().includes(searchTerm.toLowerCase());
+            return data.nama.toLowerCase().includes(searchTerm.toLowerCase());
         });
     }
     return (
@@ -125,7 +125,7 @@ const Partner = () => {
                         :
                         <div className='grid grid-cols-1 sm:grid-cols-2 gap-10'>
                             {filteredData.map((data, index) => (
-                                <UserCard data={data} index={index} setIsAddMember={setIsAddMember} isAddMember={isAddMember} />
+                                <MentorCard data={data} index={index} setIsAddMember={setIsAddMember} isAddMember={isAddMember} />
                             ))}
                         </div>
                     }
@@ -135,4 +135,4 @@ const Partner = () => {
     )
 }
 
-export default Partner
+export default Mentor

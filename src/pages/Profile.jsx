@@ -1,95 +1,161 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import { onAuthStateChanged, getAuth } from 'firebase/auth'
 import ContentLayout from '../Layout/ContentLayout'
-import { otherbg, pprobby, profile } from '../assets'
+import { otherbg, profile } from '../assets'
 import { useParams } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast'
+import { AppContext } from '../context/Provider'
+
+const Input = ({ label, name, value, disabled, onChange }) => (
+    <div className="flex flex-col gap-3">
+        <label htmlFor={name} className="font-bold text-primary3">
+            {label}
+        </label>
+        <input
+            name={name}
+            type="text"
+            value={value}
+            className="px-4 py-2 border border-black rounded-lg font-medium"
+            disabled={disabled}
+            onChange={onChange}
+        />
+    </div>
+);
 
 const Profile = () => {
+    const uid = localStorage.getItem('uid');
     const params = useParams();
-    const [isEdit, setIsEdit] = useState(false)
-    const [isAdd, setIsAdd] = useState(false)
-    const [userData, setUserData] = useState({
+    const [isLoading, setIsLoading] = useState(false);
+    const [isEdit, setIsEdit] = useState(false);
+    const [isAdd, setIsAdd] = useState(false);
+    const { repository } = useContext(AppContext);
+    const initialUserData = {
         background: otherbg,
-        nama: "Hanif Robby",
-        profile: pprobby,
-        noTelp: "08xxxxxxxxxx",
-        universitas: "Universitas Brawijaya",
-        idLine: "",
-        fakultas: "Ilmu Komputer",
-        prestasi: `Juara 2 UI/UX it COM google 2023
-Juara 3 Web dev gemastik UB 2022`,
-        jurusan: "Teknik Informatika",
-        skill: "Front End Developer",
-        deskripsi: "Berpengalaman menggunakan react/next js, terbiasa dalam slicing design, dan terbiasa dalam mengonsumsi API"
-    });
+        nama: '',
+        profile: '',
+        noTelp: '',
+        universitas: '',
+        idLine: '',
+        fakultas: '',
+        prestasi: '',
+        jurusan: '',
+        skill: '',
+        deskripsi:
+            '',
+    };
+    const [userData, setUserData] = useState(initialUserData);
 
     useEffect(() => {
-        if (params.name) {
-            setUserData({
-                background: otherbg,
-                nama: params.name,
-                profile: profile,
-                noTelp: "08xxxxxxxxxx",
-                universitas: "Universitas Brawijaya",
-                idLine: params.name.replace(/\s+/g, '_').toLowerCase(),
-                fakultas: "Ilmu Komputer",
-                prestasi: `Juara 2 UI/UX it COM google 2023
-Juara 3 Web dev gemastik UB 2022`,
-                jurusan: "Teknik Informatika",
-                skill: "Front End Developer",
-                deskripsi: "Berpengalaman menggunakan react/next js, terbiasa dalam slicing design, dan terbiasa dalam mengonsumsi API"
-            })
-        } else {
-            setUserData({
-                background: otherbg,
-                nama: "Hanif Robby",
-                profile: pprobby,
-                noTelp: "08xxxxxxxxxx",
-                universitas: "Universitas Brawijaya",
-                idLine: "hanif_robby",
-                fakultas: "Ilmu Komputer",
-                prestasi: `Juara 2 UI/UX it COM google 2023
-Juara 3 Web dev gemastik UB 2022`,
-                jurusan: "Teknik Informatika",
-                skill: "Front End Developer",
-                deskripsi: "Berpengalaman menggunakan react/next js, terbiasa dalam slicing design, dan terbiasa dalam mengonsumsi API"
-            })
-        }
-    }, [params.name]);
+        const fetchData = async () => {
+            try {
+                if (params.name) {
+                    // Use the custom data for a specific profile
+                    setUserData({
+                        ...initialUserData,
+                        nama: params.name,
+                        profile: profile,
+                        noTelp: '08xxxxxxxxxx',
+                        fakultas: 'Ilmu Komputer',
+                        jurusan: 'Teknik Informatika',
+                        universitas: 'Universitas Brawijaya',
+                        idLine: params.name.replace(/\s+/g, '_').toLowerCase(),
+                        skill: 'Front End Developer',
+                        deskripsi:
+                            'Berpengalaman menggunakan react/next js, terbiasa dalam slicing design, dan terbiasa dalam mengonsumsi API',
+                        prestasi: `Juara 2 UI/UX it COM google 2023 Juara 3 Web dev gemastik UB 2022`,
+                    });
+                } else if (uid) {
+                    setIsLoading(true)
+                    const userData = await repository.getUserData(uid);
+                    if (userData) {
+                        setUserData(userData);
+                        setIsLoading(false)
+                    } else {
+                        console.log('User data not found');
+                        setIsLoading(false)
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
+
+        fetchData();
+    }, [params.name, uid]);
 
     function handleSave() {
-        setIsEdit(false)
-        toast.success('Berhasil Menyimpan Data', {
+        // Validate required fields
+        const requiredFields = ['nama', 'noTelp', 'universitas', 'idLine', 'fakultas', 'prestasi', 'jurusan', 'skill', 'deskripsi'];
+        const missingFields = requiredFields.filter(field => !userData[field]);
+    
+        if (missingFields.length > 0) {
+            // Display error message for missing fields
+            toast.error(`Semua field harus diisi`, {
+                position: 'bottom-right',
+                className: 'text-xl font-medium p-4',
+            });
+            return;
+        }
+    
+        toast.loading('Menyimpan data', {
             position: 'bottom-right',
-            className: 'text-xl font-medium p-4'
+            className: 'text-xl font-medium p-4',
         });
+    
+        repository.updateUserProfile(uid, userData)
+            .then((success) => {
+                if (success) {
+                    toast.dismiss();
+                    setIsEdit(false);
+                    toast.success('Berhasil Menyimpan Data', {
+                        position: 'bottom-right',
+                        className: 'text-xl font-medium p-4',
+                    });
+                } else {
+                    toast.dismiss();
+                    toast.error('Gagal Menyimpan Data. Silakan coba lagi.', {
+                        position: 'bottom-right',
+                        className: 'text-xl font-medium p-4',
+                    });
+                }
+            });
     }
+    
 
     function handleChange(e) {
         const { name, value } = e.target;
         setUserData((prevUserData) => ({
             ...prevUserData,
-            [name]: value
+            [name]: value,
         }));
     }
 
-    function handleAdd(){
+    function handleAdd() {
         setIsAdd(true);
         toast.success(`Request has been sent`, {
             position: 'bottom-right',
-            className: 'text-xl font-medium p-4'
+            className: 'text-xl font-medium p-4',
         });
+    }
+
+   
+    if (isLoading) {
+        return (
+            <div className='h-[80vh] flex items-center justify-center text-3xl'>
+                Loading. . .
+            </div>
+        )
     }
 
     return (
         <ContentLayout>
             <Toaster />
             <div className='pb-10'>
-                <img src={userData.background} alt="background" className='w-full sm:h-[311px] object-cover object-center' />
+                <img referrerPolicy="no-referrer" src={userData.background} alt="background" className='w-full sm:h-[311px] object-cover object-center' />
                 <div className='sm:mx-[72px] mx-[10px]'>
                     <div className='flex flex-row items-end justify-between relative -top-[25px] sm:top-[-70px]'>
                         <div className='flex flex-row items-end gap-4 sm:gap-14'>
-                            <img src={userData.profile} alt="profile" className='sm:h-60 h-28 rounded-full' />
+                            <img src={userData.profile} alt="profile" className='sm:h-52 h-28 rounded-full' />
                             <div className='flex flex-col gap-2'>
                                 <h3 className='text-xl sm:text-6xl text-primary3 font-bold'>{userData.nama}</h3>
                                 <div className='flex flex-row gap-2 sm:gap-4 items-center'>
@@ -101,7 +167,7 @@ Juara 3 Web dev gemastik UB 2022`,
                         {!params.name ?
                             <button onClick={() => { isEdit ? handleSave() : setIsEdit(true) }} className='bg-primary3 px-2 sm:px-0 sm:w-[228px] sm:text-2xl text-white font-semibold py-2 sm:py-[10px] rounded-lg'>{isEdit ? 'Save' : 'Edit'}</button>
                             :
-                            <button onClick={handleAdd} className='bg-primary3 px-2 sm:px-0 sm:w-[228px] sm:text-2xl text-white font-semibold py-2 sm:py-[10px] rounded-lg'>{isAdd ? 'Requested...' : 'Add Friend' }</button>
+                            <button onClick={handleAdd} className='bg-primary3 px-2 sm:px-0 sm:w-[228px] sm:text-2xl text-white font-semibold py-2 sm:py-[10px] rounded-lg'>{isAdd ? 'Requested...' : 'Add Friend'}</button>
                         }
                     </div>
                     <div className='w-full flex items-center justify-center ox-12'>
@@ -168,7 +234,7 @@ Juara 3 Web dev gemastik UB 2022`,
                                     onChange={handleChange} />
                             </div>
                             <div className='flex flex-col gap-3 row-span-2'>
-                                <label htmlFor="deskripsi" className='font-bold text-primary3'>Deskrisi Skill</label>
+                                <label htmlFor="deskripsi" className='font-bold text-primary3'>Deskripsi Skill</label>
                                 <textarea
                                     rows="5"
                                     name='deskripsi'

@@ -6,6 +6,8 @@ import Partner from "./Partner";
 import EventDetail from "./EventDetail";
 import Profile from "./Profile";
 import FindTeam from "./FindTeam";
+import Mentor from "./Mentor";
+import MentorProfile from "./MentorProfile";
 
 export {
     Login,
@@ -16,4 +18,6 @@ export {
     EventDetail,
     FindTeam,
     Profile,
+    Mentor,
+    MentorProfile,
 }
