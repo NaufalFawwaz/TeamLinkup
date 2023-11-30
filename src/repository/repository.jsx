@@ -52,7 +52,7 @@ export class Repository {
             password
         ).then((result) => {
             const uid = result.user.uid
-            localStorage.setItem('uid', uid)
+            sessionStorage.setItem('uid', uid)
             onSuccess()
         }).catch((err) => {
             console.log(err)
@@ -66,7 +66,7 @@ export class Repository {
             const result = await signInWithPopup(this.auth, provider);
             const uid = result.user.uid;
             console.log(uid)
-            localStorage.setItem('uid', uid);
+            sessionStorage.setItem('uid', uid);
 
             // Extract relevant data from Google auth result
             const { displayName, photoURL, email } = result.user;
