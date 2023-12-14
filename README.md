@@ -1,6 +1,10 @@
 RPL E – Kelompok 2
 
-Gideon Aji Prakoso				      215150207111085    <br>                                                                                                               Arya Maulidzar Syahriza Putra		215150200111065                                                                                                                 Nauval Fahreza Attamimi			    215150200111068                                                                                                                  Septia Khoirin Nisa				      215150207111009                                                                                                                      M. Naufal Fawwaz Haryono			  215150207111086
+Gideon Aji Prakoso				      215150207111085  <br>  
+Arya Maulidzar Syahriza Putra		215150200111065  <br>
+Nauval Fahreza Attamimi			    215150200111068  <br>
+Septia Khoirin Nisa				      215150207111009  <br>
+M. Naufal Fawwaz Haryono			  215150207111086  <br>
 
 TeamLinkUp merupakan sistem yang dibuat berbasis website dengan menggunakan library ReactJS dan framework CSS Tailwind,. Text Editor nya adalah Visual Studio Code yang digunakan untuk mengembangkan website. Desain antarmuka didesain dengan menggunakan Figma. Untuk backend dari website ini menggunakan platform Firebase sebagai pengganti fungsi servernya.
 
