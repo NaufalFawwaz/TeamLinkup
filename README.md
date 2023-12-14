@@ -1,6 +1,6 @@
 RPL E – Kelompok 2
 
-Gideon Aji Prakoso				      215150207111085  <br>  
+Gideon Aji Prakoso				      215150207111085  
 Arya Maulidzar Syahriza Putra		215150200111065  <br>
 Nauval Fahreza Attamimi			    215150200111068  <br>
 Septia Khoirin Nisa				      215150207111009  <br>
